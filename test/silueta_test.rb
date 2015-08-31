@@ -34,3 +34,11 @@ test "casting" do
   assert user.age.kind_of?(Integer)
   assert_equal(25, user.age)
 end
+
+test "inheritance" do
+  class Admin < User
+    attribute :superpowers
+  end
+
+  assert_equal(User.attributes + [:superpowers], Admin.attributes)
+end

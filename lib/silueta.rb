@@ -6,6 +6,10 @@ module Silueta
   end
 
   module ClassMethods
+    def inherited(subclass)
+      subclass.attributes.replace(attributes)
+    end
+
     def attribute(attr, cast: nil)
       attributes << attr
 
