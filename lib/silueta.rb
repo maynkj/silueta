@@ -24,14 +24,10 @@ module Silueta
   end
 
   def attributes
-    return self.class.attributes
+    return slice(*self.class.attributes)
   end
 
-  def values
-    return slice(attributes)
-  end
-
-  def slice(attrs)
+  def slice(*attrs)
     return attrs.each_with_object({}) do |att, hash|
       hash[att] = send(att)
     end

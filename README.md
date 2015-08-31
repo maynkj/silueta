@@ -25,9 +25,7 @@ user.first_name # => "Mayn"
 user.last_name # => "Kjaer"
 user.email # => "mayn@mail.com"
 
-user.attributes # => [:first_name, :last_name, :email]
-
-user.values
+user.attributes
 # => {:first_name=>"Mayn", :last_name=>"Kjaer", :email=>"mayn@mail.com"}
 ```
 

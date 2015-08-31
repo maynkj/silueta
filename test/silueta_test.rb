@@ -17,15 +17,12 @@ test "initialize" do
 end
 
 test "attributes" do
-  attributes = %i(name email)
+  attributes = { name: "Mayn", email: "mayn@mail.com"}
+  user = User.new(attributes)
 
-  assert_equal(attributes, User.attributes)
-  assert_equal(attributes, User.new.attributes)
+  assert_equal(attributes, user.attributes)
 end
 
-test "values" do
-  values = { name: "Mayn", email: "mayn@mail.com"}
-  user = User.new(values)
-
-  assert_equal(values, user.values)
+test "class attributes" do
+  assert_equal(%i(name email), User.attributes)
 end
