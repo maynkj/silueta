@@ -19,20 +19,20 @@ class User
 end
 
 user = User.new(
-  first_name: "Mayn",
-  last_name: "Kjaer",
-  email: "mayn@mail.com"
+  first_name: "Jane",
+  last_name: "Doe",
+  email: "jane@mail.com"
 )
 
-user.first_name # => "Mayn"
-user.last_name # => "Kjaer"
-user.email # => "mayn@mail.com"
+user.first_name # => "Jane"
+user.last_name # => "Doe"
+user.email # => "jane@mail.com"
 
 user.age = "25"
 user.age # => 25
 
 user.attributes
-# => {:first_name=>"Mayn", :last_name=>"Kjaer", :email=>"mayn@mail.com", :age=>25 }
+# => {:first_name=>"Jane", :last_name=>"Doe", :email=>"jane@mail.com", :age=>25 }
 ```
 
 ## Installation
