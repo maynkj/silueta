@@ -22,3 +22,10 @@ test "attributes" do
   assert_equal(attributes, User.attributes)
   assert_equal(attributes, User.new.attributes)
 end
+
+test "values" do
+  values = { name: "Mayn", email: "mayn@mail.com"}
+  user = User.new(values)
+
+  assert_equal(values, user.values)
+end
