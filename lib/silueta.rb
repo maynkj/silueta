@@ -6,10 +6,22 @@ module Silueta
   end
 
   module ClassMethods
-    def attribute(attr)
+    def attribute(attr, cast: nil)
       attributes << attr
 
-      attr_accessor(attr)
+      if cast
+        define_method(attr) do
+          return cast.call(@attributes[attr])
+        end
+      else
+        define_method(attr) do
+          return @attributes[attr]
+        end
+      end
+
+      define_method(:"#{attr}=") do |value|
+        @attributes[attr] = value
+      end
     end
 
     def attributes
@@ -18,8 +30,14 @@ module Silueta
   end
 
   def initialize(attrs = {})
-    attrs.each do |name, value|
-      public_send("#{ name }=", value)
+    @attributes = {}
+
+    update(attrs)
+  end
+
+  def update(attrs)
+    attrs.each do |attr, value|
+      public_send(:"#{ attr }=", value)
     end
   end
 
