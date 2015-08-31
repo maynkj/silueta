@@ -21,16 +21,18 @@ user = User.new(
   email: "mayn@mail.com"
 )
 
-puts user.first_name # => "Mayn"
-puts user.last_name # => "Kjaer"
-puts user.email # => "mayn@mail.com"
+user.first_name # => "Mayn"
+user.last_name # => "Kjaer"
+user.email # => "mayn@mail.com"
 
-puts user.attributes # => [:first_name, :last_name, :email]
+user.attributes # => [:first_name, :last_name, :email]
 
-puts user.values
+user.values
 # => {:first_name=>"Mayn", :last_name=>"Kjaer", :email=>"mayn@mail.com"}
 ```
 
 ## Installation
 
-`$ gem install silueta`
+```
+$ gem install silueta
+```

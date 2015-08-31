@@ -19,7 +19,7 @@ module Silueta
 
   def initialize(attrs = {})
     attrs.each do |name, value|
-      self.public_send("#{ name }=", value)
+      public_send("#{ name }=", value)
     end
   end
 
@@ -32,6 +32,8 @@ module Silueta
   end
 
   def slice(attrs)
-    return attrs.each_with_object({}) { |att, hash| hash[att] = send(att) }
+    return attrs.each_with_object({}) do |att, hash|
+      hash[att] = send(att)
+    end
   end
 end
