@@ -1,8 +1,3 @@
-require "bundler/setup"
-require "cutest"
-require_relative "../lib/silueta"
-require_relative "../lib/silueta/types"
-
 class Product
   include Silueta
 

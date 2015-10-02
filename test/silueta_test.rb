@@ -1,7 +1,3 @@
-require "bundler/setup"
-require "cutest"
-require_relative "../lib/silueta"
-
 class User
   include Silueta
 
