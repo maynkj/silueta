@@ -38,3 +38,10 @@ test "inheritance" do
 
   assert_equal(User.attributes + [:superpowers], Admin.attributes)
 end
+
+test "ignore unlisted attributes" do
+  user = User.new(name: "Jane", email: "jane@mail.com", age: "25", alignment: "chaotic neutral")
+
+  assert !user.respond_to?(:alignment)
+end
+
