@@ -41,7 +41,7 @@ module Silueta
 
   def update(attrs)
     attrs.each do |attr, value|
-      public_send(:"#{ attr }=", value)
+      public_send(:"#{ attr }=", value) if respond_to?(:"#{ attr }=")
     end
   end
 
